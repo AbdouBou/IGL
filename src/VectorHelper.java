@@ -43,10 +43,13 @@ public class VectorHelper {
      */
     public ArrayList<Integer> additionVect(ArrayList<Integer> x)throws differentSizeException{
         ArrayList<Integer> additionResult=new ArrayList<>();
+      
+        int i=0;//un compteur pour parcourir le vecteur
         if(x.size()!=this.vecteur.size())throw new differentSizeException();
         else {
-            for (int i = 0; i < this.vecteur.size(); i++) {
+            while(i<this.vecteur.size()) {
                 additionResult.add(i, x.get(i) + this.vecteur.get(i));
+            	i++;
             }
         }
         return additionResult;
@@ -103,8 +106,8 @@ public class VectorHelper {
         if(this.vecteur.size()==0)
             System.out.println("Le vecteur est vide");
         else{
-            max=vecteur.get(0);
-            min=vecteur.get(0);
+            max=vecteur.get(0);//Initialisation
+            min=vecteur.get(0);//Initialisation
             for(int i=1;i<this.vecteur.size();i++){
                 if(max<vecteur.get(i))
                     max=vecteur.get(i);
