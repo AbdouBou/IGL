@@ -5,20 +5,42 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Vector;
 
+
+/**
+ * 
+ * @author abdou
+ * @version 1.0
+ */
 public class VectorHelper {
     private ArrayList<Integer> vecteur;
     private int max,min;
 
+    /**
+     * Creer un vecteur
+     */
     public VectorHelper() {
         this.vecteur = new ArrayList<>();
     }
+    /**
+     * 
+     * @param x ajouter un elemnt au tableau
+     */
     public void addVect(int x){
         this.vecteur.add(x);
     }
+    /**
+     * afficher le min et le max d'un vecteur
+     */
     public void dispalyVect(){
         System.out.println(vecteur);
         System.out.println(max+" "+min);
     }
+    /**
+     * 
+     * @param x le vecteur a additioner avec celui de la classe 
+     * @return le tableau qui contient la somme
+     * @throws differentSizeException l'exception genere par les taille differentes
+     */
     public ArrayList<Integer> additionVect(ArrayList<Integer> x)throws differentSizeException{
         ArrayList<Integer> additionResult=new ArrayList<>();
         if(x.size()!=this.vecteur.size())throw new differentSizeException();
@@ -29,6 +51,10 @@ public class VectorHelper {
         }
         return additionResult;
     }
+    
+    /**
+     * Trier le tableau 
+     */
     public void sortVect(){
 
         int temp,i,j,size=vecteur.size();
@@ -44,6 +70,9 @@ public class VectorHelper {
         }
 
     }
+    /**
+     * inverser les elements de tableau
+     */
     public void reverseVect(){
         int i,temp,size=vecteur.size();
         for (i=0;i<= (size / 2);i++){
@@ -52,6 +81,10 @@ public class VectorHelper {
             vecteur.add(size-i-1, temp);
         }
     }
+    /**
+     * 
+     * @param pow la puissance
+     */
     public void powerVect(int pow){
         int i,j,temp,res=1,size=vecteur.size();
         for(i=0;i<=size-1;i++){
@@ -63,6 +96,9 @@ public class VectorHelper {
         }
 
     }
+    /**
+     * Trouver le max et le min
+     */
     public void minMax(){
         if(this.vecteur.size()==0)
             System.out.println("Le vecteur est vide");
