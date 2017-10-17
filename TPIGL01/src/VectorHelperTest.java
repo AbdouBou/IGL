@@ -36,7 +36,7 @@ class VectorHelperTest {
         res.add(6);res.add(12);res.add(18);res.add(24);
         ArrayList<Integer> tem=new ArrayList<>();
         try {
-            assertEquals("l'addition de meme taille a echoué", true, test.additionVect(test1).equals(res));
+            assertEquals("l'addition de meme taille a echouee", true, test.additionVect(test1).equals(res));
         } catch (differentSizeException e) {
             fail();
         }
