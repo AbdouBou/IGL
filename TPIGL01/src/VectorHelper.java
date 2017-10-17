@@ -5,10 +5,17 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Vector;
 
+
+/**
+ * 
+ * @author Abdou/Mohamed
+ *
+ */
 public class VectorHelper {
     private ArrayList<Integer> vecteur;
     private int max,min;
 
+    
     public VectorHelper() {
         this.vecteur = new ArrayList<>();
     }
@@ -32,6 +39,12 @@ public class VectorHelper {
         System.out.println(vecteur);
         System.out.println(max+" "+min);
     }
+    /**
+     * 
+     * @param x le vecteur a additioner
+     * @return le vecteur qui contient la somme 
+     * @throws differentSizeException l'exception a lever si les tailles sont differentes
+     */
     public ArrayList<Integer> additionVect(ArrayList<Integer> x)throws differentSizeException{
         ArrayList<Integer> additionResult=new ArrayList<>();
         if(x.size()!=this.vecteur.size())throw new differentSizeException();
@@ -42,6 +55,10 @@ public class VectorHelper {
         }
         return additionResult;
     }
+    
+    /**
+     * Trier le tableau 
+     */
     public void sortVect(){
 
         int temp,i,j,size=vecteur.size();
@@ -58,6 +75,10 @@ public class VectorHelper {
         }
 
     }
+    
+    /**
+     * inverser les elements de tableau
+     */
     public void reverseVect(){
         int i,temp,size=vecteur.size();
         for (i=0;i<(size / 2);i++){
@@ -66,6 +87,11 @@ public class VectorHelper {
             vecteur.set(size-i-1, temp);
         }
     }
+    
+    /**
+     * 
+     * @param pow la puissance
+     */
     public void powerVect(int pow){
         int i,j,temp,res=1,size=vecteur.size();
         for(i=0;i<size;i++){
@@ -78,6 +104,9 @@ public class VectorHelper {
         }
 
     }
+    /**
+     * Trouver le max et le min
+     */
     public void minMax(){
         if(this.vecteur.size()==0)
             System.out.println("Le vecteur est vide");
