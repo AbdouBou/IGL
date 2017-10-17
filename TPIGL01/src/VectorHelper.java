@@ -2,35 +2,26 @@
  * Created by HP19 on 11/10/2017.
  */
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Vector;
 
 
 /**
  * 
- * @author abdou Lexus
- * @version 1.0
+ * @author Abdou/Mohamed
+ *
  */
 public class VectorHelper {
     private ArrayList<Integer> vecteur;
     private int max,min;
 
-    /**
-     * Creer un vecteur
-     */
+    
     public VectorHelper() {
         this.vecteur = new ArrayList<>();
     }
-    /**
-     * 
-     * @param x ajouter un elemnt au tableau
-     */
     public void addVect(int x){
         this.vecteur.add(x);
     }
-
-    /**
-     * afficher le min et le max d'un vecteur
-     */
-
 
     public int getMax() {
         return max;
@@ -50,19 +41,16 @@ public class VectorHelper {
     }
     /**
      * 
-     * @param x le vecteur a additioner avec celui de la classe 
-     * @return le tableau qui contient la somme
-     * @throws differentSizeException l'exception genere par les taille differentes
+     * @param x le vecteur a additioner
+     * @return le vecteur qui contient la somme 
+     * @throws differentSizeException l'exception a lever si les tailles sont differentes
      */
     public ArrayList<Integer> additionVect(ArrayList<Integer> x)throws differentSizeException{
         ArrayList<Integer> additionResult=new ArrayList<>();
-      
-        int i=0;//un compteur pour parcourir le vecteur
         if(x.size()!=this.vecteur.size())throw new differentSizeException();
         else {
-            while(i<this.vecteur.size()) {
+            for (int i = 0; i < this.vecteur.size(); i++) {
                 additionResult.add(i, x.get(i) + this.vecteur.get(i));
-            	i++;
             }
         }
         return additionResult;
@@ -87,6 +75,7 @@ public class VectorHelper {
         }
 
     }
+    
     /**
      * inverser les elements de tableau
      */
@@ -98,6 +87,7 @@ public class VectorHelper {
             vecteur.set(size-i-1, temp);
         }
     }
+    
     /**
      * 
      * @param pow la puissance
@@ -121,8 +111,8 @@ public class VectorHelper {
         if(this.vecteur.size()==0)
             System.out.println("Le vecteur est vide");
         else{
-            max=vecteur.get(0);//Initialisation
-            min=vecteur.get(0);//Initialisation
+            max=vecteur.get(0);
+            min=vecteur.get(0);
             for(int i=1;i<this.vecteur.size();i++){
                 if(max<vecteur.get(i))
                     max=vecteur.get(i);
