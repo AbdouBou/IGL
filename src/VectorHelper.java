@@ -26,9 +26,24 @@ public class VectorHelper {
     public void addVect(int x){
         this.vecteur.add(x);
     }
+
     /**
      * afficher le min et le max d'un vecteur
      */
+
+
+    public int getMax() {
+        return max;
+    }
+
+    public int getMin() {
+        return min;
+    }
+
+    public ArrayList<Integer> getVecteur() {
+        return vecteur;
+    }
+
     public void dispalyVect(){
         System.out.println(vecteur);
         System.out.println(max+" "+min);
@@ -62,11 +77,12 @@ public class VectorHelper {
         for (i=0;i<=size-2;i++){
 
             j = i;
-            while (vecteur.get(j) > vecteur.get(j + 1) && (j > 0)) {
+            while ((j>=0)&& vecteur.get(j) > vecteur.get(j+1)) {
                 temp = vecteur.get(j);
-                vecteur.add(j, vecteur.get(j + 1));
-                vecteur.add(j + 1, temp);
+                vecteur.set(j, vecteur.get(j+1));
+                vecteur.set(j+1, temp);
                 j = j - 1;
+
             }
         }
 
@@ -76,10 +92,10 @@ public class VectorHelper {
      */
     public void reverseVect(){
         int i,temp,size=vecteur.size();
-        for (i=0;i<= (size / 2);i++){
+        for (i=0;i<(size / 2);i++){
             temp = vecteur.get(i);
-            vecteur.add(i, vecteur.get(size-i-1));
-            vecteur.add(size-i-1, temp);
+            vecteur.set(i, vecteur.get(size-i-1));
+            vecteur.set(size-i-1, temp);
         }
     }
     /**
@@ -88,12 +104,13 @@ public class VectorHelper {
      */
     public void powerVect(int pow){
         int i,j,temp,res=1,size=vecteur.size();
-        for(i=0;i<=size-1;i++){
+        for(i=0;i<size;i++){
             temp=vecteur.get(i);
             for (j=1;j<=pow;j++){
                 res=temp*res;
             }
-            vecteur.add(i,res);
+            vecteur.set(i,res);
+            res=1;
         }
 
     }
