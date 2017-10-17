@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 /**
  * 
- * @author abdou
+ * @author abdou Lexus
  * @version 1.0
  */
 public class VectorHelper {
